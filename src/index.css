@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+/* Auristra Logo CSS */
+.auristra-logo {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+.auristra-logo-circle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Top-right segment (light blue) */
+.logo-segment-1 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 50%);
+}
+
+/* Right segment (medium blue) */
+.logo-segment-2 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  right: 0;
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+}
+
+/* Bottom-right segment (sky blue) */
+.logo-segment-3 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+  right: 25%;
+  background: linear-gradient(225deg, #7dd3fc 0%, #38bdf8 100%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Left segment (teal) */
+.logo-segment-4 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 0;
+  background: linear-gradient(0deg, #0e7490 0%, #0891b2 100%);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Center white circle */
+.logo-center {
+  position: absolute;
+  width: 45%;
+  height: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+}
+
+
+/* Hero animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.8s ease-out 0.4s both;
+}
