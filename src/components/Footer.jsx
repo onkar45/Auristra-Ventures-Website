@@ -29,16 +29,20 @@ export default function Footer() {
             <h4 className="font-bold mb-3 text-sm">Contact Info</h4>
             <ul className="space-y-2 text-blue-200 text-sm">
               <li className="flex items-start gap-2">
-                <span>📧</span>
-                <a href="mailto:Premkala.k@auristraventures.com" className="hover:text-white transition-colors break-all">Premkala.k@auristraventures.com</a>
+                <span>📞</span>
+                <a href="tel:+919172763721" className="hover:text-white transition-colors">+91 9172763721</a>
               </li>
               <li className="flex items-start gap-2">
                 <span>📧</span>
-                <a href="mailto:Info@auristraventures.com" className="hover:text-white transition-colors">Info@auristraventures.com</a>
+                <a href="mailto:info@auristraventures.com" className="hover:text-white transition-colors break-all">info@auristraventures.com</a>
+              </li>
+              <li className="flex items-start gap-2">
+                <span>🌐</span>
+                <a href="https://www.auristraventures.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.auristraventures.com</a>
               </li>
               <li className="flex items-start gap-2">
                 <span>📍</span>
-                <span className="leading-relaxed">Office of the Assistant Commissioner of Labour, Latur, Shashikant Sonawane Building, Tilak Nagar, Main Road, Latur</span>
+                <span className="leading-relaxed">Neelkanth Sanskruti Society, Sector No. 06, Karanjade, Panvel, Mumbai</span>
               </li>
             </ul>
           </div>

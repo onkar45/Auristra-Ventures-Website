@@ -51,7 +51,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-[500px] md:h-[550px] overflow-hidden">
+    <section id="home" className="relative h-[calc(100vh-80px)] md:h-[calc(100vh-140px)] min-h-[500px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -92,7 +92,7 @@ export default function Hero() {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }
                     }}
-                    className={`inline-flex items-center justify-center cursor-pointer ${slide.buttonStyle} px-8 py-3 text-sm rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[200px]`}
+                    className={`hero-button-animate inline-flex items-center justify-center cursor-pointer ${slide.buttonStyle} px-8 py-3 text-sm rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-110 hover:-translate-y-1 min-w-[200px]`}
                   >
                     Explore Our Products
                   </a>
@@ -120,14 +120,14 @@ export default function Hero() {
       {/* Arrow Navigation */}
       <button
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white w-10 h-10 rounded-full transition-all z-20 flex items-center justify-center text-2xl border border-white/20"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-blue-300 transition-colors z-20"
         aria-label="Previous slide"
       >
         ‹
       </button>
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white w-10 h-10 rounded-full transition-all z-20 flex items-center justify-center text-2xl border border-white/20"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl hover:text-blue-300 transition-colors z-20"
         aria-label="Next slide"
       >
         ›
