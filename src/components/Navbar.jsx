@@ -56,7 +56,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full sticky top-0 z-50">
+    <nav className="w-full fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       {/* Top Section */}
       <div className="bg-white border-b border-blue-100 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">

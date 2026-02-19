@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <main className="pt-[140px]">
+        <Home />
+      </main>
       <Footer />
     </>
   );
