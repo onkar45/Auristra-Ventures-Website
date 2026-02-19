@@ -37,8 +37,8 @@ export default function Footer() {
                 <a href="mailto:info@auristraventures.com" className="hover:text-white transition-colors break-all">info@auristraventures.com</a>
               </li>
               <li className="flex items-start gap-2">
-                <span>🌐</span>
-                <a href="https://www.auristraventures.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.auristraventures.com</a>
+                <span>📧</span>
+                <a href="mailto:Premkala.k@auristraventures.com" className="hover:text-white transition-colors break-all">Premkala.k@auristraventures.com</a>
               </li>
               <li className="flex items-start gap-2">
                 <span>📍</span>
