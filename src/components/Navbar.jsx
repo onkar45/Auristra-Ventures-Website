@@ -11,6 +11,7 @@ export default function Navbar() {
 
   const scrollToTop = (e) => {
     e.preventDefault();
+    window.history.pushState({}, '', '/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMobileMenuOpen(false);
   };
