@@ -11,7 +11,8 @@ export default function Hero() {
       description: "Serving Government Departments, Hospitals, Educational Institutions & Businesses",
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80",
       textColor: "text-white",
-      buttonStyle: "bg-white text-blue-900 hover:bg-blue-50"
+      buttonStyle: "bg-white text-blue-900 hover:bg-blue-50",
+      link: "#services"
     },
     {
       title: "Hospital Instruments & Equipment",
@@ -19,7 +20,8 @@ export default function Hero() {
       description: "Premium surgical instruments, diagnostic equipment, and patient care essentials",
       image: medicalEquipment,
       textColor: "text-white",
-      buttonStyle: "bg-blue-600 text-white hover:bg-blue-700"
+      buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
+      link: "#hospital-equipment"
     },
     {
       title: "Office & Institutional Stationery",
@@ -27,7 +29,8 @@ export default function Hero() {
       description: "From daily consumables to customized stationery solutions",
       image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1920&q=80",
       textColor: "text-white",
-      buttonStyle: "bg-white text-indigo-900 hover:bg-indigo-50"
+      buttonStyle: "bg-white text-indigo-900 hover:bg-indigo-50",
+      link: "#office-stationery"
     },
     {
       title: "Furniture Work & Installation",
@@ -35,7 +38,8 @@ export default function Hero() {
       description: "Custom office furniture and modular workstations with expert installation",
       image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80",
       textColor: "text-white",
-      buttonStyle: "bg-white text-teal-900 hover:bg-teal-50"
+      buttonStyle: "bg-white text-teal-900 hover:bg-teal-50",
+      link: "#furniture-work"
     }
   ];
 
@@ -67,18 +71,31 @@ export default function Hero() {
             <div className="absolute inset-0 flex items-center">
               <div className="container mx-auto px-6">
                 <div className="max-w-2xl">
-                  <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 ${slide.textColor} leading-tight`}>
-                    {slide.title}
-                  </h1>
-                  <p className={`text-lg md:text-xl mb-2 ${slide.textColor} font-medium`}>
-                    {slide.subtitle}
-                  </p>
-                  <p className={`text-sm md:text-base mb-5 ${slide.textColor} opacity-90`}>
-                    {slide.description}
-                  </p>
-                  <button className={`${slide.buttonStyle} px-6 py-2.5 text-sm rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:scale-105`}>
+                  <div className="min-h-[260px] md:min-h-[220px] flex flex-col justify-center">
+                    <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-3 ${slide.textColor} leading-tight`}>
+                      {slide.title}
+                    </h1>
+                    <p className={`text-lg md:text-xl mb-2 ${slide.textColor} font-medium`}>
+                      {slide.subtitle}
+                    </p>
+                    <p className={`text-sm md:text-base mb-5 ${slide.textColor} opacity-90`}>
+                      {slide.description}
+                    </p>
+                  </div>
+                  <a 
+                    href={slide.link} 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState({}, '', '/');
+                      const element = document.querySelector(slide.link);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
+                    className={`inline-flex items-center justify-center cursor-pointer ${slide.buttonStyle} px-8 py-3 text-sm rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:scale-105 min-w-[200px]`}
+                  >
                     Explore Our Products
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

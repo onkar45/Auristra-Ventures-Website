@@ -16,17 +16,17 @@ export default function StationerySection() {
           {officeStationery.map((product) => (
             <div 
               key={product.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-blue-100 flex flex-col"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-blue-100 flex flex-col group"
             >
               <div className="h-48 overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{product.name}</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-2 group-hover:text-blue-700 transition-colors">{product.name}</h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="mb-4 flex-grow">
                   <h4 className="font-semibold text-blue-800 mb-2">Products Include:</h4>
@@ -41,7 +41,7 @@ export default function StationerySection() {
                 </div>
                 <a 
                   href="#contact"
-                  className="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors shadow-md mt-auto"
+                  className="block text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300 shadow-md mt-auto transform hover:scale-105"
                 >
                   Request Quote
                 </a>
