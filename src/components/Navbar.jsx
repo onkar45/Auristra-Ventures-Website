@@ -8,6 +8,7 @@ import { HiMenu, HiX } from 'react-icons/hi';
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuClosing, setMobileMenuClosing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const scrollToTop = (e) => {
@@ -52,7 +53,23 @@ export default function Navbar() {
   };
 
   const handleNavClick = () => {
-    setMobileMenuOpen(false);
+    setMobileMenuClosing(true);
+    setTimeout(() => {
+      setMobileMenuOpen(false);
+      setMobileMenuClosing(false);
+    }, 400);
+  };
+
+  const toggleMobileMenu = () => {
+    if (mobileMenuOpen) {
+      setMobileMenuClosing(true);
+      setTimeout(() => {
+        setMobileMenuOpen(false);
+        setMobileMenuClosing(false);
+      }, 400);
+    } else {
+      setMobileMenuOpen(true);
+    }
   };
 
   return (
@@ -79,7 +96,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={toggleMobileMenu}
             className="md:hidden text-blue-900 p-2"
             aria-label="Toggle menu"
           >
@@ -233,7 +250,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-blue-100 shadow-lg">
+        <div className={`md:hidden bg-white border-b border-blue-100 shadow-lg ${mobileMenuClosing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}>
           <div className="container mx-auto px-4 py-4">
             {/* Mobile Search */}
             <div className="flex items-center gap-2 mb-4">
